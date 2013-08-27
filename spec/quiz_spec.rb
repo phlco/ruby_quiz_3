@@ -1,16 +1,26 @@
 require "spec_helper"
 require_relative '../quiz'
 
+
 #                )\._.,--....,'``.
 #  .b--.        /;   _.. \   _\  (`._ ,.
 # `=,-,-'~~~   `----(,_..'--(,_..'`-.;.'
 
+# Not running? Load failure
+
 describe "a quiz" do
+  array = [1, 2, 3, 4, 5, 10]
+
   it "should be about Ruby and Testing in Rspec" do
     expect(QUIZ_TOPICS).to include("ruby")
     expect(QUIZ_TOPICS).to include("rspec")
     expect(QUIZ_TOPICS).to include("testing")
   end
+
+  it "should return the difference of the two largest numbers in an array" do
+    expect(big_diff(array)).to eq(2)
+  end
+
 end
 
 # more in quiz.rb!
