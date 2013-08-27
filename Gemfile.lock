@@ -1,8 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.0.9)
     diff-lcs (1.2.4)
+    method_source (0.8.2)
     multi_json (1.7.9)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -15,10 +21,12 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    slop (3.4.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   rspec
   simplecov
