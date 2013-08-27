@@ -11,6 +11,23 @@ describe "a quiz" do
     expect(QUIZ_TOPICS).to include("rspec")
     expect(QUIZ_TOPICS).to include("testing")
   end
+
+  it "should subtract the largest value from the smallest, given an array" do
+    expect(big_diff([1,2,3])).to equal(2)
+  end
+
+  it "should return the average of either the middle two or three numbers" do
+    expect(average_median([1,2,3,4,5])). to eq(3.0)
+  end
+
+  it "should see if the array can balance" do
+    expect(can_balance([3, 4, 1, 2, 3, 1])). to eq(true)
+  end
+
+  it "count the clumps of array > 2" do
+    expect(count_clumps([1,1,2,2,4,3])). to eq(2)
+  end
+
 end
 
 # more in quiz.rb!
@@ -20,6 +37,8 @@ end
 # big_diff(array)
 #  [3, 6, 9, 12] => 3
 #  [9, 20, 11, 12] => 8
+
+
 
 # return the average of the 2 or 3 numbers in the middle of the array
 # (2 if the array has an even number of elements)
