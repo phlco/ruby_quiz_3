@@ -50,9 +50,21 @@ end
 #  [3, 4, 1, 2, 3, 1] => true
 
 describe "can_balance function" do
-
+  it "returns the expected value" do
+    expect(can_balance([1, 2, 1, 1, 1])).to be_true
+    expect(can_balance([2, 1, 1, 2, 1])).to be_false
+    expect(can_balance([3, 4, 1, 2, 3, 1])).to be_true
+  end
+end
 
 # Returns the number of times 2 or more of the same number appear sequentially.
 # count_clumps(array)
 #  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 #  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+
+describe "count_clumps" do
+  it "returns the expected value" do
+    expect(count_clumps([2, 1, 1, 1, 1, 3, 3, 3, 1])).to eq(2)
+    expect(count_clumps([9, 3, 3, 4, 4, 4, 6, 7, 7, 7])).to eq(3)
+  end
+end

@@ -45,7 +45,6 @@ def average_median(arr = [])
   else
     new_arr << arr[middle - 1] << arr[middle] << arr[middle + 1]
   end
-  # binding.pry
   return new_arr.reduce(:+).to_f / new_arr.size
 end
 
@@ -56,7 +55,39 @@ end
 #  [2, 1, 1, 2, 1] => false
 #  [3, 4, 1, 2, 3, 1] => true
 
+def can_balance(arr = [])
+  for num in 1..arr.length
+    new_arrs = []
+    new_arrs << arr.slice(0, num) << arr.slice(num, arr.length - num)
+    if new_arrs[0].reduce(:+) == new_arrs[1].reduce(:+)
+      return true
+    end
+  end
+  return false
+end
+
 # Returns the number of times 2 or more of the same number appear sequentially.
 # count_clumps(array)
 #  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 #  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+
+def count_clumps(arr = [])
+  ret_val = 0
+  in_clump = false
+  curr_val = nil
+  for num in 0..arr.length - 2
+    if in_clump
+      if arr[num] != arr[num + 1]
+        in_clump = false
+        curr_val = nil
+      end
+    else
+      if arr[num] == arr[num + 1]
+        ret_val += 1
+        in_clump = true
+        curr_val = arr[num]
+      end
+    end
+  end
+  return ret_val
+end
