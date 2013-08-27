@@ -21,6 +21,13 @@ end
 #  [3, 6, 9, 12] => 3
 #  [9, 20, 11, 12] => 8
 
+describe "big_diff function" do
+  it "returns the expected value" do
+    expect(big_diff([3, 6, 9, 12])).to eq(3)
+    expect(big_diff([9, 20, 11, 12])).to eq(8)
+  end
+end
+
 # return the average of the 2 or 3 numbers in the middle of the array
 # (2 if the array has an even number of elements)
 # (3 if the array has an odd number of elements).
@@ -28,12 +35,22 @@ end
 #  [2, 6, 9, 11] => 7.5
 #  [9, 8, 2, 4, 7] => 4.66
 
-# return true if you can split the array into parts
+describe "average_median function" do
+  it "returns the expected value" do
+    expect(average_median([2, 6, 9, 11])).to eq(7.5)
+    expect(average_median([9, 8, 2, 4, 7])).to be_within(0.01).of(4.66)
+  end
+end
+
+# return true if you can split the array into 2 parts
 # where the sum of one portion equals the sum of the other portion.
 # can_balance(array)
 #  [1, 2, 1, 1, 1] => true
 #  [2, 1, 1, 2, 1] => false
 #  [3, 4, 1, 2, 3, 1] => true
+
+describe "can_balance function" do
+
 
 # Returns the number of times 2 or more of the same number appear sequentially.
 # count_clumps(array)
