@@ -61,6 +61,7 @@ def can_balance(array)
     second = array.slice(i+1..l)
     if first.inject(:+) == second.inject(:+)
       is_balanced = true
+      i = l-1
     end
     i = i+1
   end
