@@ -15,15 +15,23 @@ end
 
 # more in quiz.rb!
 
-# Find the largest number and second largest number
-# Then subtract the difference.
-# big_diff(array)
-#  [3, 6, 9, 12] => 3
-#  [9, 20, 11, 12] => 8
+describe "big_dif(array)" do
+  it "should find the difference between the largest number and second largest number" do
+    a = [3, 6, 9, 12]
+    b = [9, 20, 11, 12]
+    expect( big_diff(a) ).to equal(3)
+    expect( big_diff(b) ).to equal(8)
+  end
+end
 
-# return the average of the 2 or 3 numbers in the middle of the array
-# (2 if the array has an even number of elements)
-# (3 if the array has an odd number of elements).
+describe "average median of array" do
+  it "returns the average of the 2 (if even) or 3 numbers (if odd) in the middle of the array" do
+    a = [2, 6, 9, 11]
+    b = [9, 8, 2, 4, 7]
+    expect( average_median(a) ).to be_within(0.1).of(7.5)
+    expect( average_median(b) ).to be_within(0.1).of(4.66)
+  end
+end
 # average_median(array)
 #  [2, 6, 9, 11] => 7.5
 #  [9, 8, 2, 4, 7] => 4.66

@@ -16,11 +16,23 @@ QUIZ_TOPICS = ["ruby", "rspec", "testing"]
 
 # Given an array...
 
-# Find the largest number and second largest number
-# Then subtract the difference.
-# big_diff(array)
-#  [3, 6, 9, 12] => 3
-#  [9, 20, 11, 12] => 8
+def big_diff(array)
+  array.max - array.sort[-2]
+end
+
+
+def average_median(array)
+  if array.length % 2 == 0
+    index2 = array.length / 2
+    avg = (array[index2] + array[index2 - 1]).to_f / 2
+  else
+    index_mid = array.length / 2
+    avg = (array[index_mid] + array[index_mid - 1] + array[index_mid + 1]).to_f / 3
+  end
+  return avg
+end
+
+
 
 # return the average of the 2 or 3 numbers in the middle of the array
 # (2 if the array has an even number of elements)
