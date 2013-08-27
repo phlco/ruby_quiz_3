@@ -5,8 +5,10 @@ require_relative '../quiz'
 #  .b--.        /;   _.. \   _\  (`._ ,.
 # `=,-,-'~~~   `----(,_..'--(,_..'`-.;.'
 
+
 describe "a quiz" do
   it "should be about Ruby and Testing in Rspec" do
+  	system('clear')
     expect(QUIZ_TOPICS).to include("ruby")
     expect(QUIZ_TOPICS).to include("rspec")
     expect(QUIZ_TOPICS).to include("testing")
@@ -63,5 +65,11 @@ end
 
 # Returns the number of times 2 or more of the same number appear sequentially.
 describe 'clumps' do
-	
+	it "should return the number of clumps in the array" do
+		expect(clumps([100,100,100,2,2,3,4,3,3,4,7,4,3,5,5])).to eq 4
+	end
+
+	it "should not count same numbers that are separated" do
+		expect(clumps([100, 10, 100, 10, 100, 10])).to eq 0
+	end
 end

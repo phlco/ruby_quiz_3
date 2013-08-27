@@ -46,7 +46,21 @@ end
 
 # Returns the number of times 2 or more of the same number appear sequentially.
 def clumps(array)
+	clumps = 0
+	current = 0
+	already_verified = false
+	array.each do |number|
+		if number == current && !already_verified
+			clumps += 1
+			already_verified = true
+		else 
+			already_verified = false
+		end
+		current = number
+	end
+	return clumps
 end
+
 
 #sums values of an array
 def sum(array)
@@ -67,9 +81,3 @@ def average(array)
 	return (sum/array.length.to_f).round(2)
 end
 
-def large_array()
-	array = (1..100).to_a.shuffle!
-	puts array
-end
-
-large_array
