@@ -17,25 +17,51 @@ end
 
 # Find the largest number and second largest number
 # Then subtract the difference.
-# big_diff(array)
-#  [3, 6, 9, 12] => 3
-#  [9, 20, 11, 12] => 8
+describe 'big diff' do 
+	it "should take the difference of the two larges numbers" do
+		expect(big_diff([1,7,4,2,10])).to eq 3
+		expect(big_diff([8,3,4,26,22])).to eq 4
+	end
+
+	it "should return zero if the largest number appears twice" do
+		expect(big_diff([1,2,4,10,10])).to eq 0
+	end
+end
+
+
 
 # return the average of the 2 or 3 numbers in the middle of the array
-# (2 if the array has an even number of elements)
-# (3 if the array has an odd number of elements).
-# average_median(array)
-#  [2, 6, 9, 11] => 7.5
-#  [9, 8, 2, 4, 7] => 4.66
+describe 'average_median' do
+	it "should return the average of 2 middle elements if array is even" do
+		expect(average_median([2,7,8,10])).to eq 7.5
+	end
+
+	it "should return the average of 3 middle elements if array is odd" do
+		expect(average_median([2,3,4,5,10])).to eq 4
+	end
+
+	it "shold return the average for two-value arrays" do
+		expect(average_median([2, 8])).to eq 5
+	end
+end
 
 # return true if you can split the array into parts
 # where the sum of one portion equals the sum of the other portion.
-# can_balance(array)
-#  [1, 2, 1, 1, 1] => true
-#  [2, 1, 1, 2, 1] => false
-#  [3, 4, 1, 2, 3, 1] => true
+describe 'can_balance' do 
+	it "should return true if the array can be split into equal sections" do
+		expect(can_balance([1,1,1,2,1])).to be true
+	end
+
+	it 'should return false if the array can"t be split into equal sections' do
+		expect(can_balance([100,2])).to be false
+	end
+
+	it 'should return false if the array is of length 1' do
+		expect(can_balance([1])).to be false
+	end
+end
 
 # Returns the number of times 2 or more of the same number appear sequentially.
-# count_clumps(array)
-#  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
-#  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+describe 'clumps' do
+	
+end
