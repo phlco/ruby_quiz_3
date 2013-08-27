@@ -11,6 +11,27 @@ describe "a quiz" do
     expect(QUIZ_TOPICS).to include("rspec")
     expect(QUIZ_TOPICS).to include("testing")
   end
+
+  it "should subtract the second largest number from the largest number" do
+    big_diff([3, 6, 9, 12]).should eq(3)
+    big_diff([9, 20, 11, 12]).should eq(8)
+  end
+
+  it "should return the average of the 2 or 3 numbers in the middle of the array" do
+    average_median([2, 6, 9, 11]).should eq(7.5)
+    average_median([9, 8, 2, 4, 7]).should be_close(4.66, 0.1)
+  end
+
+  it "should return true if you can split the array into parts" do
+    can_balance([1, 2, 1, 1, 1]).should eq(true)
+    can_balance([2, 1, 1, 2, 1]).should eq(false)
+    can_balance([3, 4, 1, 2, 3, 1]).should eq(true)
+  end
+
+  it "should returns the number of times 2 or more of the same number appear sequentially" do
+    count_clumps([2, 1, 1, 1, 1, 3, 3, 3, 1]).should eq(2)
+    count_clumps([9, 3, 3, 4, 4, 4, 6, 7, 7, 7]).should eq(3)
+  end
 end
 
 # more in quiz.rb!
