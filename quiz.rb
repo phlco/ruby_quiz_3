@@ -99,6 +99,7 @@ def count_clumps(array)
         answer += 1
         answer_collection << num
       end
+      counter += 1
     else
       counter += 1
     end
