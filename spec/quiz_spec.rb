@@ -11,6 +11,22 @@ describe "a quiz" do
     expect(QUIZ_TOPICS).to include("rspec")
     expect(QUIZ_TOPICS).to include("testing")
   end
+
+  it 'should find the largest and second largest number and subract the difference' do
+    expect(big_diff([3, 6, 9, 12])).to eq(3)
+    expect(big_diff([9, 20, 11, 12])).to eq(8)
+  end
+
+  it 'should return avg of 2 or 3 numbers in the middle of an array' do
+    expect(average_median([2, 6, 9, 11])).to eq(7.5)
+    expect(average_median([9, 8, 2, 4, 7])).to eq(4.67)
+  end
+
+  #it 'should return true if it can be split into equal sums' do
+  #  expect(can_balance([1, 2, 1, 1, 1])).to eq(true)
+  #end
+
+
 end
 
 # more in quiz.rb!
