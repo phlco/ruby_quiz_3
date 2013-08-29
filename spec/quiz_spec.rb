@@ -21,6 +21,29 @@ end
 #  [3, 6, 9, 12] => 3
 #  [9, 20, 11, 12] => 8
 
+describe "a big_diff method" do
+
+  it "should return a integer" do
+    array = [1, 3, 4]
+    expect(big_diff(array)).to eql(1)
+  end
+  it "should return"
+end
+
+
+
+describe "a average_median medthod" do
+
+    it "should return a float" do
+      array = [1, 3, 5, 6]
+      expect(average_median(array)).should_not be("tree")
+  end
+
+    it "should return a " do
+  end
+end
+
+
 # return the average of the 2 or 3 numbers in the middle of the array
 # (2 if the array has an even number of elements)
 # (3 if the array has an odd number of elements).
